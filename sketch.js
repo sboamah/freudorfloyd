@@ -43,7 +43,7 @@ let threshold = 5;
 
 let thisScore; 
 let highScore; //highest score locally stored
-let scoreKeeper = new Array();
+let scoreKeeper = [0];
 
 let scoreFill; 
 
