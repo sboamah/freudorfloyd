@@ -1,29 +1,40 @@
 body{
     background-image: url('images/background-02.png');
     background-repeat: no-repeat;
+    background-color: #FBB03B;
     background-size: cover;
   }
 
   @font-face { font-family: Balboa; src: url('fonts/Balboa.ttf'); } 
 @font-face { font-family: Futura; src: url('fonts/Futura.ttf'); } 
 
+#container{
+  margin: 0 auto;
+  margin-top: 300px;
+  background-color: #ffffb9;
+  display: block;
+  width:400px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #ffffb9;
+  border: 5px solid black;
+}
 
 .buttons{
-  width: 200px;
+  width: 165px;
   margin: 0 auto;
-  bottom: 50px;
-  right: 100px;
-  position:absolute;
   transition: 1s ease-in-out;
 }
 
 .title {
   font-family: Balboa;
   text-transform: uppercase;
-  left:400px;
-  bottom: 0px;
-  position: absolute;
-  font-size: 80px;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+  font-size: 50px;
   height: 1em;
 }
 
@@ -59,40 +70,28 @@ button:focus {
   color: white;
   transition: 0.5s ease-in-out;
 }
+@media only screen and (max-width: 850px) {
 
-@media only screen and (max-width: 900px) {
-    body{
-        background-image: url('images/background-03.png');
-    }
+  body{
+      background-image: url('images/background-03.png');
+  }
 
-    .title {
-        left:200px;
-        bottom: 190px;
-        font-size: 80px;
-      }
 
-      .buttons{
-        bottom: 150px;
-        right: 100px;
-      }
+  }
 
-}
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
 
     body{
         background-image: url('images/background-04.png');
     }
 
-    .title {
-        left:12.5%;
-        top: 90px;
-        font-size: 40px;
-      }
+    #container{
+      width:90%;
+    }
 
-      .buttons{
-        bottom: 50px;
-        right: 0px;
-      }
+    .title {
+      font-size: 30px;
+    }
 
     }

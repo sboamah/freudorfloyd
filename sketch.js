@@ -46,6 +46,26 @@ let highScore; //highest score locally stored
 let scoreKeeper = [0];
 
 let scoreFill; 
+let ranNums = shuffle([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]);
+
+function shuffle(array) {
+  var i = array.length,
+      j = 0,
+      temp;
+
+  while (i--) {
+
+      j = Math.floor(Math.random() * (i+1));
+
+      // swap randomly chosen element with current element
+      temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+
+  }
+
+  return array;
+}
 
 function preload() {
   source = loadJSON("quotes.json");
@@ -67,6 +87,8 @@ function preload() {
 
 }
 
+let iterator = ranNums.values();
+
 function setup() {
   land = createGraphics(windowWidth, windowHeight);
   g = createCanvas(300, 200);
@@ -85,7 +107,7 @@ function setup() {
   qCorrect.resize(15, 15);
   qIncorrect.resize(15, 15);
 
-  id = getRandomInt(0, 19);
+  id = iterator.next().value;
   alert = "";
   floydIndex = 0;
   freudIndex = 0;
@@ -145,7 +167,7 @@ function mainGame() {
 
   next.style.display = 'inline-block';
 
-  document.getElementById('quote').innerHTML = source.quotes[id].quote;
+  document.getElementById('quote').innerHTML = '"' + source.quotes[id].quote + '"';
   document.getElementById('alert').innerHTML = alert;
   if (typeof(Storage) !== "undefined") {
     document.getElementById('high-score').innerHTML = 'Current Score: ' + thisScore + 

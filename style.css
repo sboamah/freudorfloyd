@@ -55,7 +55,7 @@ canvas {
 .title{
   font-family: Balboa;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 20px;
   height: 1em;
 }
 
@@ -97,8 +97,10 @@ p {
 }
 
 h3 {
-  font-size: 15px;
+  font-size: 16px;
   height: 3em;
+  background-color: #ffffb9;
+  font-style: italic;
 }
 
 #congrats{
