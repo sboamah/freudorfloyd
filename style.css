@@ -1,0 +1,118 @@
+@font-face { font-family: Balboa; src: url('fonts/Balboa.ttf'); } 
+@font-face { font-family: Futura; src: url('fonts/Futura.ttf'); } 
+
+html, body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: Futura;
+  background-color: #ffffb9;
+}
+canvas {
+  display: block;
+}
+
+.center {
+  margin: auto;
+  width: 412px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing {
+  margin: auto;
+  margin-top: -25%;
+  margin-left: -15%;
+  padding: 10px;
+  transition: 1s ease-in-out;
+}
+
+.buttons{
+  width: 200px;
+  margin: 0 auto;
+  margin-top: -12.5%;
+  margin-right: 10%;
+  transition: 1s ease-in-out;
+}
+
+.landing .title {
+  font-family: Balboa;
+  text-transform: uppercase;
+  font-size: 10vw;
+  height: 1.1em;
+}
+
+.title{
+  font-family: Balboa;
+  text-transform: uppercase;
+  font-size: 30px;
+  height: 1.1em;
+}
+
+button[name="Next"]{
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+}
+
+button {
+  margin: 0 auto;
+  margin: 5px;
+  font-size: 20px;
+  font-family: Balboa;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 0;
+  border: 0px;
+  padding: 15px;
+  border-radius: 50px;
+}
+
+button:hover {
+  background-color: rgb(255, 221, 0);
+  transition: 0.5s ease-in-out;
+}
+
+button:focus {
+  background-color: orange;
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+p {
+  font-size: 12px;
+}
+
+h3 {
+  font-size: 15px;
+  height: 3em;
+}
+
+#congrats{
+  font-size: 15px;
+  height: 3em;
+}
+
+h4 {
+  font-size: 14px;
+  height: 1.1em;
+  width: auto; 
+  padding: 10px;
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 800px) {
+  .landing {
+    margin: auto;
+    margin-top: -50%;
+    margin-left: -5%;
+  }
+
+  .buttons{
+    margin-top: -5%;
+    margin-right: 33%;
+  }
+}

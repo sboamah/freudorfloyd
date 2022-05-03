@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="p5.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <title>Freud or Floyd?</title>
+    <meta name="description" content="Freud or Floyd Game">
+    <meta name="author" content="Sylvia Boamah">
+
+  </head>
+  <body>
+    <main>
+    </main>
+    <script src="sketch.js"></script>
+    <section class="center">
+
+      <h1 class="title">Freud or Floyd</h1>
+      <p class="tagline">Guess if the quote is from the famed philosopher or the brash boxer.</p>
+
+      <section id="score-holder"></section>
+
+      <h3 id="quote"></h3>
+      <h4 id="alert"></h4>
+      <h4 id="high-score"></h4>
+
+      <section id="sketch-holder"></section>
+      <br>
+      <button id="freud" onclick="checkAnswer()">Freud</button>
+      <button id="floyd" onclick="checkAnswer()">Floyd</button> 
+      <br>
+      <button name="Next" id="next" onclick ="setup()">Next →</button>
+    </section>
+
+    
+</body></html>
