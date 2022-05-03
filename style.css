@@ -28,6 +28,15 @@ canvas {
   transition: 1s ease-in-out;
 }
 
+.ending {
+  width:200px;
+  position:absolute;
+  margin: 0 auto;
+  padding: 10px;
+  transition: 1s ease-in-out;
+}
+
+
 .buttons{
   width: 200px;
   margin: 0 auto;
@@ -47,7 +56,7 @@ canvas {
   font-family: Balboa;
   text-transform: uppercase;
   font-size: 30px;
-  height: 1.1em;
+  height: 1em;
 }
 
 button[name="Next"]{
@@ -84,6 +93,7 @@ button:focus {
 
 p {
   font-size: 12px;
+  line-height: 0.5em;
 }
 
 h3 {
@@ -98,7 +108,7 @@ h3 {
 
 h4 {
   font-size: 14px;
-  height: 1.1em;
+  height: 1em;
   width: auto; 
   padding: 10px;
   background-color: transparent;
@@ -115,4 +125,12 @@ h4 {
     margin-top: -5%;
     margin-right: 33%;
   }
+}
+
+@media only screen and (max-width:400px) {
+
+  .center {
+    width:100%;
+  }
+  
 }

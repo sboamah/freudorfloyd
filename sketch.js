@@ -69,13 +69,13 @@ function preload() {
 
 function setup() {
   land = createGraphics(windowWidth, windowHeight);
-  g = createCanvas(windowWidth/2, min(windowWidth/3, windowHeight/3));
+  g = createCanvas(300, 200);
   g.parent('sketch-holder');
 
   quoteColor = document.querySelector('h4'); //changes if answer is right or not
   quoteColor.style.backgroundColor = '#ffffb9';
 
-  center = createVector(width/4, height/6);
+  center = createVector(150, 100);
 
   score = createGraphics(400, 100);
   score.parent('score-holder');
@@ -128,7 +128,8 @@ function draw() {
    highScore = Math.max(...scoreKeeper);
   
    next.onclick = location.href='endScreen.html';
-   congrats.innerHTML = 'Congratulations, you got a score of ' + thisScore + '%!';
+   let message = 'Congratulations, you got a score of ' + thisScore + '%!'
+   congrats.innerHTML = message;
    console.log(congrats);
  }
   // main();
@@ -152,15 +153,15 @@ function mainGame() {
   }
 
   background(255, 255, 186);
-  score.image(scoreFill[0], 10, 10);
-  score.image(scoreFill[1], 30, 10);
-  score.image(scoreFill[2], 50, 10);
-  score.image(scoreFill[3], 70, 10);
-  score.image(scoreFill[4], 90, 10);
+  score.image(scoreFill[0], 0, 10);
+  score.image(scoreFill[1], 20, 10);
+  score.image(scoreFill[2], 40, 10);
+  score.image(scoreFill[3], 60, 10);
+  score.image(scoreFill[4], 80, 10);
 
-  image(freudimg[freudIndex], center.x-100, center.y);
-  image(floydimg[floydIndex], center.x+50, center.y);
-  image(score, center.x, 0);
+  image(freudimg[freudIndex], center.x-150, 50);
+  image(floydimg[floydIndex], center.x, 50);
+  image(score, width/2 - 50, 0);
 
 }
 

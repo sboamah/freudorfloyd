@@ -1,0 +1,98 @@
+body{
+    background-image: url('images/background-02.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @font-face { font-family: Balboa; src: url('fonts/Balboa.ttf'); } 
+@font-face { font-family: Futura; src: url('fonts/Futura.ttf'); } 
+
+
+.buttons{
+  width: 200px;
+  margin: 0 auto;
+  bottom: 50px;
+  right: 100px;
+  position:absolute;
+  transition: 1s ease-in-out;
+}
+
+.title {
+  font-family: Balboa;
+  text-transform: uppercase;
+  left:400px;
+  bottom: 0px;
+  position: absolute;
+  font-size: 80px;
+  height: 1em;
+}
+
+
+button[name="Next"]{
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+}
+
+button {
+  margin: 0 auto;
+  margin: 5px;
+  font-size: 20px;
+  font-family: Balboa;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 0;
+  border: 0px;
+  padding: 15px;
+  border-radius: 50px;
+}
+
+button:hover {
+  background-color: rgb(255, 221, 0);
+  transition: 0.5s ease-in-out;
+}
+
+button:focus {
+  background-color: orange;
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+@media only screen and (max-width: 900px) {
+    body{
+        background-image: url('images/background-03.png');
+    }
+
+    .title {
+        left:200px;
+        bottom: 190px;
+        font-size: 80px;
+      }
+
+      .buttons{
+        bottom: 150px;
+        right: 100px;
+      }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+    body{
+        background-image: url('images/background-04.png');
+    }
+
+    .title {
+        left:12.5%;
+        top: 90px;
+        font-size: 40px;
+      }
+
+      .buttons{
+        bottom: 50px;
+        right: 0px;
+      }
+
+    }
