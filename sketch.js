@@ -96,6 +96,8 @@ function setup() {
 
   quoteColor = document.querySelector('h4'); //changes if answer is right or not
   quoteColor.style.backgroundColor = '#ffffb9';
+  document.getElementById("freud").disabled = false;
+  document.getElementById("floyd").disabled = false;
 
   center = createVector(150, 100);
 
@@ -139,6 +141,10 @@ function draw() {
   thisScore = 100*correct/threshold; 
 
   mainGame();
+
+  if(localStorage.getItem("highScore") == null){
+    localStorage.setItem('highScore', 0);
+  }
 
  if(number > threshold){
    next.innerHTML = "See Score";
@@ -207,6 +213,8 @@ function checkAnswer(){
       scoreFill.splice(number-1, 1,  qCorrect);
       freudIndex = 1;
       correct++;
+      document.getElementById("freud").disabled = true;
+      document.getElementById("floyd").disabled = true;
    } else{
     alert = "Wrong! the answer is " + source.quotes[id].author + ".";
     quoteColor.style.backgroundColor = '#ff5e55';
@@ -214,6 +222,8 @@ function checkAnswer(){
     scoreFill.splice(number-1,1, qIncorrect);
     freudIndex = 2;
     incorrect++;
+    document.getElementById("freud").disabled = true;
+    document.getElementById("floyd").disabled = true;
   }
 }
    
@@ -225,6 +235,8 @@ function checkAnswer(){
       scoreFill.splice(number-1, 1,  qCorrect);
       floydIndex = 1;
       correct++;
+      document.getElementById("freud").disabled = true;
+      document.getElementById("floyd").disabled = true;
    } else{
         alert = "Wrong! the answer is " + source.quotes[id].author + ".";
         quoteColor.style.backgroundColor = '#ff5e55';
@@ -232,6 +244,8 @@ function checkAnswer(){
         floyd.style.backgroundColor = '#ff5e55';
         scoreFill.splice(number-1,1, qIncorrect);
         incorrect++;
+        document.getElementById("freud").disabled = true;
+        document.getElementById("floyd").disabled = true;
       }
     }
 
