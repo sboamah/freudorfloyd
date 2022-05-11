@@ -14,19 +14,12 @@ canvas {
 
 .center {
   margin: auto;
-  width: 380px;
+  width: 350px;
   padding: 10px;
   justify-content: center;
   align-items: center;
 }
 
-.landing {
-  margin: auto;
-  margin-top: -25%;
-  margin-left: -15%;
-  padding: 10px;
-  transition: 1s ease-in-out;
-}
 
 .ending {
   width:200px;
@@ -45,17 +38,11 @@ canvas {
   transition: 1s ease-in-out;
 }
 
-.landing .title {
-  font-family: Balboa;
-  text-transform: uppercase;
-  font-size: 10vw;
-  height: 1.1em;
-}
 
 .title{
   font-family: Balboa;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 15px;
   height: 1em;
 }
 
@@ -92,12 +79,16 @@ button:focus {
 }
 
 p {
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1em;
 }
 
+#high-score{
+  font-weight: 900;
+}
+
 h3 {
-  font-size: 16px;
+  font-size: 21px;
   height: 50px;
   background-color: #ffffb9;
   font-style: italic;
@@ -135,4 +126,12 @@ h4 {
     width:100%;
   }
   
+}
+
+#score-holder img{
+  width: 20px;
+}
+
+#faces img{
+  width: 150px;
 }
