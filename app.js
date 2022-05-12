@@ -148,10 +148,10 @@ function checkAnswer(){
 function getScore(){
     if (typeof(Storage) !== "undefined" || localStorage.getItem('highScore') !== null) {
         document.getElementById('high-score').innerHTML = 'Current Score: ' + thisScore + 
-        ' | Highest Score: ' + localStorage.getItem('highScore');
+        '% | Highest Score: ' + localStorage.getItem('highScore') +'%';
     } else{
         document.getElementById('high-score').innerHTML = 'Current Score: ' + thisScore + 
-        ' | Highest Score: 0';
+        '% | Highest Score: 0%';
     }
 }
 
