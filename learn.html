@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="p5.js"></script>
-    <script src="p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,21 +11,29 @@
 
   </head>
   <body>
-    <main>
-    </main>
-    <script src="sketch.js"></script>
     <section class="center">
-
-      <h2>Sigmund Freud</h2>
+      <h2>Sigmund Freud <img onclick="freudPron()" style="width:20px" src="images/soundIcon.png"></h2>
+      <img style="width:200px" src="images/freudBio.jpg">
       <p>Sigmund Freud was an Austrian neurologist and the founder of psychoanalysis.</p>
       <hr>
-      <h2>Floyd Mayweather</h2>
-      <p>Floyd Mayweather is an American boxing promoter and former boxer. </p>
+      <h2>Floyd Mayweather Jr. <img onclick="floydPron()" style="width:20px" src="images/soundIcon.png"></h2>
+      <img style="width:200px" src="images/floydBio.jpg">
+      <p>Floyd Mayweather is an American boxing promoter and former boxer with a record of 26 consecutive wins in world title fights. </p>
 
       <br>
       <button onclick="location.href='index.html'">Back</button>
   
     </section>
+</body>
+<script>
+  function freudPron(){
+    let pron = new Audio('audios/freud_pronounce.mp3');
+    pron.play();
+  }
 
-    
-</body></html>
+  function floydPron(){
+    let pron = new Audio('audios/floyd_pronounce.mp3');
+    pron.play();
+  }
+</script>
+</html>
