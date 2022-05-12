@@ -1,4 +1,4 @@
-let arr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+let arr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 let ranNums = shuffle(arr);
 let id = 0;
 let qNum = id + 1;
@@ -142,10 +142,10 @@ function checkAnswer(){
 function getScore(){
     if (typeof(Storage) !== "undefined") {
         document.getElementById('high-score').innerHTML = 'Current Score: ' + thisScore + 
-        '| Highest Score: ' + localStorage.getItem('highScore');
+        ' | Highest Score: ' + localStorage.getItem('highScore');
     } else{
         document.getElementById('high-score').innerHTML = 'Current Score: ' + thisScore + 
-        '| Highest Score: 0';
+        ' | Highest Score: 0';
     }
 }
 
