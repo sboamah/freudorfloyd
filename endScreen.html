@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="p5.js"></script>
-    <script src="p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,18 +11,24 @@
 
   </head>
   <body>
-    <main>
-    </main>
-    <script src="sketch.js"></script>
 
     <section class="ending">
-    
-      <div class = "buttons">
       <h3 id="congrats"></h3>
       <button id="play-again" onclick="location.href='index.html'">Play Again</button> 
-      </div>
       
     </section>
-
     
-</body></html>
+</body>
+<script src="app.js"></script>
+<script>
+  let over = new Audio('audios/freudOver.mp3');
+  over.play();
+  thisScore = localStorage.getItem('thisScore');
+  if(thisScore < 60){
+    document.getElementById("congrats").innerHTML = 'Oh no! You got a score of ' + thisScore + '!';
+  } else{
+  document.getElementById("congrats").innerHTML = 'Congrats! You got a score of ' + thisScore + '!';
+  }
+</script>
+
+</html>

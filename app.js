@@ -9,6 +9,13 @@ let incorrect = 0;
 let threshold = 5;
 let thisScore = 0;
 
+let audios = {
+    'freudRight': new Audio('audios/freudRight.mp3'),
+    'freudWrong': new Audio('audios/freudWrong.mp3'),
+    'floydRight': new Audio('audios/floydRight.mp3'),
+    'floydWrong': new Audio('audios/floydWrong.mp3'),
+};
+
 
 function shuffle(array) {
   var i = array.length,
@@ -44,14 +51,16 @@ function next(){
         id++;
         qNum++;
     }
-    if(id == 4){
-        next.innerHTML = "See Score";
+    if(id > 3){
+        document.getElementById("next").innerHTML = "See Score";
     }
-    if(id == 5){
-    next.onclick = location.href='endScreen.html';
-      if(thisScore > localStorage.getItem("highScore")){
+    if(id > 4){
+    document.getElementById("next").onclick = location.href='endScreen.html';
+    localStorage.setItem('thisScore', thisScore);
+        if(thisScore > localStorage.getItem("highScore")){
             localStorage.setItem('highScore', thisScore);
            }
+    
     }
     console.log(id);
     console.log(qNum);
@@ -93,8 +102,7 @@ function checkAnswer(){
             document.getElementById("floyd").disabled = true;
             document.getElementById('q'+ qNum).src = 'images/qCorrect.png';
             document.getElementById('frFace').src = 'images/freudhappy.png';
-            // scoreFill.splice(number-1, 1,  qCorrect);
-            // freudIndex = 1;
+            audios['freudRight'].play();
         } else{
              freud.style.backgroundColor = '#ff5e55';
              alert.innerHTML = "Wrong! the answer is " + data.quotes[ranNums[id]].author + ".";
@@ -104,8 +112,7 @@ function checkAnswer(){
              document.getElementById("floyd").disabled = true;
              document.getElementById('q'+ qNum).src = 'images/qIncorrect.png';
              document.getElementById('frFace').src = 'images/freudmad.png';
-        //   scoreFill.splice(number-1,1, qIncorrect);
-        //   freudIndex = 2;
+             audios['freudWrong'].play();
         }
     } 
         floyd.onclick = function() { 
@@ -120,11 +127,9 @@ function checkAnswer(){
             document.getElementById("floyd").disabled = true;
             document.getElementById('q'+ qNum).src = 'images/qCorrect.png';
             document.getElementById('flFace').src = 'images/floydhappy.png';
-            // scoreFill.splice(number-1, 1,  qCorrect);
-            // floydIndex = 1;
+            audios['floydRight'].play();
             
         } else{
-            //   floydIndex = 2;
             floyd.style.backgroundColor = '#ff5e55';
             alert.innerHTML = "Wrong! the answer is " + data.quotes[ranNums[id]].author + ".";
             alert.style.backgroundColor = '#ff5e55';
@@ -133,6 +138,7 @@ function checkAnswer(){
             document.getElementById("floyd").disabled = true;
             document.getElementById('q'+ qNum).src = 'images/qIncorrect.png';
             document.getElementById('flFace').src = 'images/floydmad.png';
+            audios['floydWrong'].play();
             }
         }
         });
@@ -140,7 +146,7 @@ function checkAnswer(){
 }
 
 function getScore(){
-    if (typeof(Storage) !== "undefined") {
+    if (typeof(Storage) !== "undefined" || localStorage.getItem('highScore') !== null) {
         document.getElementById('high-score').innerHTML = 'Current Score: ' + thisScore + 
         ' | Highest Score: ' + localStorage.getItem('highScore');
     } else{
