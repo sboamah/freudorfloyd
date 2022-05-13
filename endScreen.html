@@ -11,11 +11,20 @@
 
   </head>
   <body>
+    <style>
+      .ending{
+        height:300px;
+      }
+
+      img{
+        width: 350px;
+      }
+    </style>
 
     <section class="ending">
       <h3 id="congrats"></h3>
       <button id="play-again" onclick="location.href='index.html'">Play Again</button> 
-      
+      <img id="endPhoto">
     </section>
     
 </body>
@@ -24,10 +33,12 @@
   let over = new Audio('audios/freudOver.mp3');
   over.play();
   thisScore = localStorage.getItem('thisScore');
-  if(thisScore < 60){
+  if(thisScore < 80){
     document.getElementById("congrats").innerHTML = 'Oh no! You got a score of ' + thisScore + '%!';
+    document.getElementById("endPhoto").src = 'images/fofend-16.png';
   } else{
   document.getElementById("congrats").innerHTML = 'Congrats! You got a score of ' + thisScore + '%!';
+  document.getElementById("endPhoto").src = 'images/fofend-17.png';
   }
 </script>
 

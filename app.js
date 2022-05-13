@@ -146,12 +146,18 @@ function checkAnswer(){
 }
 
 function getScore(){
-    if (typeof(Storage) !== "undefined" || localStorage.getItem('highScore') !== null) {
-        document.getElementById('high-score').innerHTML = 'Current Score: ' + thisScore + 
-        '% | Highest Score: ' + localStorage.getItem('highScore') +'%';
-    } else{
-        document.getElementById('high-score').innerHTML = 'Current Score: ' + thisScore + 
-        '% | Highest Score: 0%';
+    if (typeof(Storage) !== "undefined"){
+        if(localStorage.getItem('highScore') !== null) {
+            document.getElementById('high-score').innerHTML = 'Current Score: ' + thisScore + 
+            '% | Highest Score: ' + localStorage.getItem('highScore') +'%';
+        } else{
+            document.getElementById('high-score').innerHTML = 'Current Score: ' + thisScore + 
+            '% | Highest Score: 0%';
+        }
+
+        if(localStorage.getItem('highScore') > 100){
+            localStorage.setItem('highScore', 100);
+        }
     }
 }
 
