@@ -69,13 +69,7 @@ button {
 }
 
 button:hover {
-  background-color: rgb(255, 221, 0);
-  transition: 0.5s ease-in-out;
-}
-
-button:focus {
-  background-color: orange;
-  color: white;
+  background-color: #ffdd00;
   transition: 0.5s ease-in-out;
 }
 
