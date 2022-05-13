@@ -98,8 +98,9 @@ p {
 }
 
 h3 {
-  font-size: 21px;
-  height: 90px;
+  font-size: 20px;
+  height: 95px;
+  line-height: 0.8em;
   width: 300px;
   margin: 0 auto;
   background-color: #ffffb9;
